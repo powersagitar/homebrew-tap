@@ -1,8 +1,8 @@
 class HowTo < Formula
   desc "Turn a plain-English request into a shell command on your prompt"
   homepage "https://github.com/powersagitar/how-to"
-  url "https://github.com/powersagitar/how-to/releases/download/v0.1.0/how-to-0.1.0.tar.gz"
-  sha256 "049546d2fea404f3bd4794e5650470ac7c8fa99473777cb34e00dc9ab8d424e5"
+  url "https://github.com/powersagitar/how-to/releases/download/v0.2.0/how-to-0.2.0.tar.gz"
+  sha256 "02f8286ebc281fba6cf204a76a66da1ded437955f88e055df9a2c361a6bdb36d"
   license "GPL-3.0-only"
 
   # how-to.bash needs bash >= 4.4; macOS /bin/bash is 3.2.
