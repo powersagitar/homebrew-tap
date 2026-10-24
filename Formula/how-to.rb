@@ -7,6 +7,7 @@ class HowTo < Formula
 
   # how-to.bash needs bash >= 4.4; macOS /bin/bash is 3.2.
   depends_on "bash" => :test
+  uses_from_macos "zsh" => :test
 
   def install
     pkgshare.install "src/how-to.zsh", "src/how-to.bash"
