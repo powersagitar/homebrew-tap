@@ -1,8 +1,8 @@
 class HowTo < Formula
   desc "Turn a plain-English request into a shell command on your prompt"
   homepage "https://github.com/powersagitar/how-to"
-  url "https://github.com/powersagitar/how-to/releases/download/v0.2.0/how-to-0.2.0.tar.gz"
-  sha256 "02f8286ebc281fba6cf204a76a66da1ded437955f88e055df9a2c361a6bdb36d"
+  url "https://github.com/powersagitar/how-to/releases/download/v0.3.0/how-to-0.3.0.tar.gz"
+  sha256 "c50fbb3b610d7343450585d945379f83665872313653d1bf49916b29eef00b4e"
   license "GPL-3.0-only"
 
   bottle do
