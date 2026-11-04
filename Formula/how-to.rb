@@ -6,9 +6,9 @@ class HowTo < Formula
   license "GPL-3.0-only"
 
   bottle do
-    root_url "https://github.com/powersagitar/homebrew-tap/releases/download/how-to-0.2.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "67dfc7a5a026726c1b62552c56a428879bfd5a746f55c0dce36a976a3f40823a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e888be40e7ced1b4fa29426c826ae33f7f8410b2be884f4ddf88971134d9eba0"
+    root_url "https://github.com/powersagitar/homebrew-tap/releases/download/how-to-0.3.0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "44fe30e65ef6c3e0fbafeef8f8f194d88f7ed563dc78ff2a06fb5bcdc9d75b90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c22dded1414b6dfc52bc3c91718f41495e07171c3db53c5a5d1635aec35e77ec"
   end
 
   # how-to.bash needs bash >= 4.4; macOS /bin/bash is 3.2.
