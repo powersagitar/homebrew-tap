@@ -4,6 +4,7 @@ class SpaceIndicator < Formula
   url "https://github.com/powersagitar/space-indicator/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "8d97739b7158e897778902a1db6b02d4c716142b3ad3c3a13c7ee56e33143746"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     root_url "https://github.com/powersagitar/homebrew-tap/releases/download/space-indicator-0.2.0"
@@ -51,29 +52,19 @@ class SpaceIndicator < Formula
 
   def caveats
     <<~EOS
-      Setup (one time):
+      Link it into /Applications once, then launch it:
         ln -sfn "#{opt_prefix}/Space Indicator.app" "/Applications/Space Indicator.app"
-      Then start it with:
         open "/Applications/Space Indicator.app"
-      (or from Spotlight once linked). Launch at Login is in its menu.
+      Launch at Login is in its menu.
 
-      Common pitfalls on a fresh machine:
-        - Full Xcode 27 or later is required; the Command Line Tools alone are
-          not enough. Switch with:
-            sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-        - Accept the Xcode license:
-            sudo xcodebuild -license accept
-        - Install Xcode's first-launch components:
-            sudo xcodebuild -runFirstLaunch
-        - Apple Silicon and macOS 27 or later only.
-        - If the number doesn't appear, check System Settings -> Menu Bar, where
-          items can be hidden. On notched MacBooks a full menu bar can push it
-          behind the notch.
-        - Nothing asks for permissions. A prompt asking for any means something
-          is wrong.
-        - Turning on Launch at Login makes macOS show a "Background Items Added"
-          notice. That is expected: it is the LaunchAgent plist being written.
-        - Uninstalling: run space-indicator-cleanup before brew uninstall.
+      After an upgrade, restart it to run the new version:
+        killall "Space Indicator"; open "/Applications/Space Indicator.app"
+
+      Notes:
+        - No number? Check System Settings -> Menu Bar, or the notch may hide it.
+        - It never asks for permissions; a "Background Items Added" notice after
+          enabling Launch at Login is expected.
+        - Before brew uninstall, run space-indicator-cleanup.
     EOS
   end
 
