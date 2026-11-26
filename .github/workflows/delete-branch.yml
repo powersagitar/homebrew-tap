@@ -1,0 +1,41 @@
+name: Delete closed pull request branches
+
+on:
+  schedule:
+    # Every day at 18:30 UTC
+    - cron: 30 18 * * *
+  workflow_dispatch:
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  delete-branches:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - name: Delete branches
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          pr_branches() {
+            gh pr list --state "$1" --limit 1000 --json headRefName,isCrossRepository \
+              --jq '.[] | select(.isCrossRepository | not) | .headRefName' | sort -u
+          }
+
+          # Closed (including merged) PR branches without an open PR reusing them.
+          stale_branches="$(comm -23 <(pr_branches closed) <(pr_branches open))"
+          existing_branches="$(gh api --paginate "repos/$GH_REPO/branches" --jq '.[].name' | sort -u)"
+
+          comm -12 <(echo "$stale_branches") <(echo "$existing_branches") |
+            while read -r branch
+            do
+              [[ -z "$branch" || "$branch" == main ]] && continue
+              gh api --method DELETE "repos/$GH_REPO/git/refs/heads/$branch"
+            done
