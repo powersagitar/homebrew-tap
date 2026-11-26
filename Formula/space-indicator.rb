@@ -7,8 +7,8 @@ class SpaceIndicator < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/powersagitar/homebrew-tap/releases/download/space-indicator-0.2.0"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e42a2dcee55905c86519eda95abc7d8e8e30453ba36a8f1983df93cfdf4fc769"
+    root_url "https://github.com/powersagitar/homebrew-tap/releases/download/space-indicator-0.2.0_1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aef21c2cb30749d8bcd9ba45184ac14cffad005645fd1a84ca1f1ef402e712db"
   end
 
   depends_on xcode: ["27.0", :build]
