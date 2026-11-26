@@ -1,8 +1,8 @@
 class SpaceIndicator < Formula
   desc "Menu bar app showing the active macOS Space number"
   homepage "https://github.com/powersagitar/space-indicator"
-  url "https://github.com/powersagitar/space-indicator/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "d8303fea31f83d94de9029eced2cb818209a7e2672cbbc702f5dfec2d4dde734"
+  url "https://github.com/powersagitar/space-indicator/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "8d97739b7158e897778902a1db6b02d4c716142b3ad3c3a13c7ee56e33143746"
   license "GPL-3.0-only"
 
   bottle do
